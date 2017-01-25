@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Math Login</title>
+<title>Success</title>
 </head>
 <body>
-<form action="login" method="post">
-	<input type="text" placeholder="username" name="username">
-	<input type="password" placeholder="password" name="password">
-	<input type="submit">
-</form>
+	<h3>Login Successful!</h3>
 </body>
 </html>

@@ -7,10 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import info.math.resham.dto.User;
+import info.math.resham.service.loginService;
+
 /**
  * Servlet implementation class loginServlet
  */
-@WebServlet("/rd/login")
+@WebServlet("/login")
 public class loginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -21,6 +24,19 @@ public class loginServlet extends HttpServlet {
 		String username, password;
 		username = request.getParameter("username");
 		password = request.getParameter("password");
+		
+		loginService LoginService = new loginService();
+		boolean result = LoginService.authenticate(username, password);
+		
+		if (result) {
+			User user = LoginService.getUserDetails(username);
+			response.sendRedirect("success.jsp");
+			return;
+		}
+		else {
+			response.sendRedirect("login.jsp");
+			return;
+		}
 	}
 
 }
