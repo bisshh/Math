@@ -33,7 +33,7 @@ public class loginServlet extends HttpServlet {
 		if (result) {
 			User user = LoginService.getUserDetails(username);
 			request.setAttribute("user", user);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
