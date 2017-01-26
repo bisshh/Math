@@ -19,3 +19,12 @@
 
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="lib/assets/js/demo.js"></script>
+
+<script>
+var selector = '.nav li';
+
+$(selector).on('click', function(){
+    $(selector).removeClass('active');
+    $(this).addClass('active');
+});
+</script>

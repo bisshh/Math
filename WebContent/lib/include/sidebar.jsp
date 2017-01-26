@@ -7,7 +7,7 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="dashboard.jsp">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>

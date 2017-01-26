@@ -93,40 +93,7 @@
                                         <span data-notify="message">
 											<!-- Variable Declaration -->
 											<%
-												if(request.getParameter("submit") != ""){
-													Enumeration x1, x2, y1, y2, result1, result2;
-													double a1 = (double)x1.nextElement();
-													double b1 = (double)y1.nextElement();
-													double a2 = (double)x2.nextElement();
-													double b2 = (double)y1.nextElement();
-													double c1 = (double)result1.nextElement();
-													double c2 = (double)result2.nextElement();
-													
-													double temp_a1, temp_b1, temp_c1, temp_a2, temp_b2, temp_c2, x, y;
-													
-													if(Math.abs(a1-a2) > a1)
-													{
-														temp_a1 = -a2 * a1;
-														temp_b1 = -a2 * b1;
-														temp_c1 = -a2 * c1;
-													}
-													
-													temp_a1 = a2 * a1;
-													temp_b1 = a2 * b1;
-													temp_c1 = a2 * c1;
-													
-													temp_a2 = (-a1) * a2;
-													temp_b2 = (-a1) * b2;
-													temp_c2 = (-a1) * c2;
-									
-													y = (temp_c1 + temp_c2) / (temp_b1 + temp_b2);
-													x = (c1 - (b1 * y)) / a1;
 												
-													if(request.getParameter("submit") != "")
-													{
-														out.println("x =" + x + "<br>" + "y =" + y);
-													}
-												}
 											%>
 										</span>
                                     </div>
