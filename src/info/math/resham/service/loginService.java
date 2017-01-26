@@ -23,6 +23,6 @@ public class loginService {
 		User user = new User();
 		user.setFullName(users.get(username));
 		user.setUsername(username); 
-		return;
+		return user;
 	}
 }

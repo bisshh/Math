@@ -1,6 +1,8 @@
 package info.math.resham;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,7 +32,9 @@ public class loginServlet extends HttpServlet {
 		
 		if (result) {
 			User user = LoginService.getUserDetails(username);
-			response.sendRedirect("success.jsp");
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+			dispatcher.forward(request, response);
 			return;
 		}
 		else {
