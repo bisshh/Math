@@ -8,9 +8,11 @@
 </head>
 <body>
 	<h3>Login Successful!</h3>
-	<%
-		User user = (User) request.getAttribute("user");
-	%>
-	Hello <%=user.getFullName() %>!
+	
+	<jsp:useBean id="user" class="info.math.resham.dto.User" scope="request">
+		<jsp:setProperty property="fullName" name="user" value="NewUser"/>
+	</jsp:useBean>
+	
+	Hello! <jsp:getProperty property="fullName" name="user"/>
 </body>
 </html>
