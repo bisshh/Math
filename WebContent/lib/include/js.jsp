@@ -21,10 +21,11 @@
 <script src="lib/assets/js/demo.js"></script>
 
 <script>
-var selector = '.nav li';
-
-$(selector).on('click', function(){
-    $(selector).removeClass('active');
-    $(this).addClass('active');
+$(document).ready(function() {
+	var currUrl = window.location.pathname.replace('/Math/', '');
+	var menuChildren = $('a[href="' + currUrl + '"]');
+	var submenu = menuChildren.closest('li');
+	//menuChildren.addClass('active');
+	submenu.closest('li').addClass('active');
 });
 </script>
