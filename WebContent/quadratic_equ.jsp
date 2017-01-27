@@ -69,26 +69,32 @@ if(request.getParameter("submit")!=null)
                             <div class="content">
                                 <form method="post">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
+                                       		<span class="in-value">f(x) = </span>
+                                        </div>
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="a" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("a") != "")%> <%= request.getParameter("a") %>">
                                             </div>
                                         </div>
-                                        <div class="col-md-1">
-                                       		<span class="in-value">x<sup>2</sup> +</span>
+                                        <div class="col-md-2">
+                                       		<span class="in-value">ax<sup>2</sup> +</span>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="b" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("b") != "")%> <%= request.getParameter("b") %>">
                                             </div>
                                         </div>
                                         <div class="col-md-1">
-                                       		<span class="in-value">x +</span>
+                                       		<span class="in-value">bx +</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="c" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("c") != "")%> <%= request.getParameter("c") %>">
                                             </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">c</span>
                                         </div>
                                     </div>
                                     									
