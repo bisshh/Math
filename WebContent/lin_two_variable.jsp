@@ -13,6 +13,43 @@
 
 </head>
 <body>
+<%
+//variable declaration
+double x, y, a1, a2, b1, b2, c1, c2, x1, x2, temp_a1, temp_a2, temp_b1, temp_b2, temp_c1, temp_c2;
+
+x = 0;
+y = 0;
+
+if(request.getParameter("submit")!=null)
+{
+	a1 = Double.parseDouble(request.getParameter("x1"));
+	b1 = Double.parseDouble(request.getParameter("y1"));
+	a2 = Double.parseDouble(request.getParameter("x2"));
+	b2 = Double.parseDouble(request.getParameter("y2"));
+	c1 = Double.parseDouble(request.getParameter("result1"));
+	c2 = Double.parseDouble(request.getParameter("result2"));
+			
+	if(Math.abs(a1-a2) > a1)
+	{
+		temp_a1 = -a2*a1;
+		temp_b1 = -a2*b1;
+		temp_c1 = -a2*c1;
+	}
+	else
+	{
+		temp_a1 = a2*a1;
+		temp_b1 = a2*b1;
+		temp_c1 = a2*c1;
+	}
+	
+	temp_a2 = (-a1)*a2;
+	temp_b2 = (-a1)*b2;
+	temp_c2 = (-a1)*c2;
+	
+	y = (temp_c1 + temp_c2)/(temp_b1 + temp_b2);
+	x = (c1 - (b1 * y))/a1;			
+}
+%>
 
 <div class="wrapper">
 	<jsp:include page="lib/include/sidebar.jsp" /> <!-- /Sidebar -->
@@ -41,7 +78,7 @@
                                 <h4 class="title">Calculate 2 variables</h4>
                             </div>
                             <div class="content">
-                                <form action="linearServlet" method="post">
+                                <form method="post">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
@@ -93,13 +130,14 @@
                                         <span data-notify="message">
 											<!-- Variable Declaration -->
 											<%
-												
+												out.println("" + x);
+												out.println("" + y);
 											%>
 										</span>
                                     </div>
                                     
                                     <div>
-                                        <button type="submit" class="btn btn-danger btn-fill btn-wd">Calculate</button>
+                                        <button type="submit" name="submit" class="btn btn-danger btn-fill btn-wd">Calculate</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>
