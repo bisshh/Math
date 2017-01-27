@@ -69,7 +69,7 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="#">
+                                        <a href="lin_three_variable.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
@@ -105,7 +105,7 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="#">
+                                        <a href="quadratic_equ.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">

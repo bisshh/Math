@@ -1,4 +1,4 @@
-/*      light colors - used for select dropdown         */
+.card .alert.alert-with-icon/*      light colors - used for select dropdown         */
 .ct-blue {
   stroke: #7A9E9F !important;
 }
@@ -1824,7 +1824,7 @@ textarea.form-control {
   position: relative;
 }
 .card .alert.alert-with-icon {
-  padding-left: 65px;
+  padding-left: 15px;
 }
 .card .icon-big {
   font-size: 3em;

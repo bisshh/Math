@@ -15,39 +15,28 @@
 <body>
 <%
 //variable declaration
-double x, y, a1, a2, b1, b2, c1, c2, x1, x2, temp_a1, temp_a2, temp_b1, temp_b2, temp_c1, temp_c2;
-
-x = 0;
-y = 0;
-
+double x, y, z, a1, a2, a3, b1, b2, b3, c1, c2, c3, d1, d2, d3, temp;
+x=0; y=0; z=0;
 if(request.getParameter("submit")!=null)
-{
+{			           
 	a1 = Double.parseDouble(request.getParameter("x1"));
 	b1 = Double.parseDouble(request.getParameter("y1"));
+	c1 = Double.parseDouble(request.getParameter("z1"));
 	a2 = Double.parseDouble(request.getParameter("x2"));
 	b2 = Double.parseDouble(request.getParameter("y2"));
-	c1 = Double.parseDouble(request.getParameter("result1"));
-	c2 = Double.parseDouble(request.getParameter("result2"));
-			
-	if(Math.abs(a1-a2) > a1)
-	{
-		temp_a1 = -a2*a1;
-		temp_b1 = -a2*b1;
-		temp_c1 = -a2*c1;
-	}
-	else
-	{
-		temp_a1 = a2*a1;
-		temp_b1 = a2*b1;
-		temp_c1 = a2*c1;
-	}
+	c2 = Double.parseDouble(request.getParameter("z2"));
+	a3 = Double.parseDouble(request.getParameter("x3"));
+	b3 = Double.parseDouble(request.getParameter("y3"));
+	c3 = Double.parseDouble(request.getParameter("z3"));
+	d1 = Double.parseDouble(request.getParameter("result1"));
+	d2 = Double.parseDouble(request.getParameter("result2"));
+	d3 = Double.parseDouble(request.getParameter("result3"));
 	
-	temp_a2 = (-a1)*a2;
-	temp_b2 = (-a1)*b2;
-	temp_c2 = (-a1)*c2;
+	temp = (a1 * b2 * c3 + b1 * a3 * c2 + c1 * a2 * b3) - (a1 * c2 * b3 + b1 * a2 * c3 + c1 * b2 * a3);
 	
-	y = (temp_c1 + temp_c2)/(temp_b1 + temp_b2);
-	x = (c1 - (b1 * y))/a1;			
+	x = ((b1 * c3 * d2 + c1 * b2 * d3 + d1 * c2 * b3) - (b1 * c2 * d3 + c1 * b3 * d2 + d1 * b2 * c3)) / temp;
+	y = ((a1 * c2 * d3 + c1 * a3 * d2 + d1 * a2 * c3)-(a1 * c3 * d2 + c1 * a2 * d3 + d1 * c2 * a3)) / temp;
+	z = ((a1 * b3 * d2 + b1 * a2 * d3 + d1 * b2 * a3) - (a1 * b2 * d3 + b1 * a3 * d2 + d1 * a2 * b3)) / temp;			
 }
 %>
 
@@ -80,7 +69,7 @@ if(request.getParameter("submit")!=null)
                             <div class="content">
                                 <form method="post">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="x1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("x1") != "")%> <%= request.getParameter("x1") %>">
                                             </div>
@@ -88,22 +77,30 @@ if(request.getParameter("submit")!=null)
                                         <div class="col-md-1">
                                        		<span class="in-value">x +</span>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="y1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("y1") != "")%> <%= request.getParameter("y1") %>">
                                             </div>
                                         </div>
                                         <div class="col-md-1">
-                                       		<span class="in-value">y =</span>
+                                       		<span class="in-value">y +</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input name="z1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("z1") != "")%> <%= request.getParameter("z1") %>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">z =</span>
+                                        </div>
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <input name="result1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("result1") != "")%> <%= request.getParameter("result1") %>">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="x2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("x2") != "")%> <%= request.getParameter("x2") %>">
                                             </div>
@@ -111,17 +108,57 @@ if(request.getParameter("submit")!=null)
                                         <div class="col-md-1">
                                        		<span class="in-value">x +</span>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <input name="y2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("y2") != "")%> <%= request.getParameter("y2") %>">
                                             </div>
                                         </div>
                                         <div class="col-md-1">
-                                       		<span class="in-value">y =</span>
+                                       		<span class="in-value">y +</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input name="z2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("z2") != "")%> <%= request.getParameter("z2") %>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">z =</span>
+                                        </div>
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <input name="result2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("result2") != "")%> <%= request.getParameter("result2") %>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input name="x3" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("x3") != "")%> <%= request.getParameter("x3") %>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">x +</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input name="y3" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("y3") != "")%> <%= request.getParameter("y3") %>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">y +</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input name="z3" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("z3") != "")%> <%= request.getParameter("z3") %>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">z =</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <input name="result3" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("result3") != "")%> <%= request.getParameter("result3") %>">
                                             </div>
                                         </div>
                                     </div>
@@ -136,6 +173,10 @@ if(request.getParameter("submit")!=null)
 											<br>
 											<%
 												out.println("Y = " + y);
+											%>
+											<br>
+											<%
+												out.println("Z = " + z);
 											%>
 										</span>
                                     </div>
