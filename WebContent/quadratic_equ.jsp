@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Linear equation with variables - Math Assignment</title>
+<title>Quadratic Equation - Math Assignment</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
@@ -15,39 +15,28 @@
 <body>
 <%
 //variable declaration
-double x, y, a1, a2, b1, b2, c1, c2, x1, x2, temp_a1, temp_a2, temp_b1, temp_b2, temp_c1, temp_c2;
+double x, y, a1, b1, c1, x1, x2, determinate;
 
-x = 0;
-y = 0;
+determinate = 0;
+x1 = 0;
+x2 = 0;
 
 if(request.getParameter("submit")!=null)
 {
-	a1 = Double.parseDouble(request.getParameter("x1"));
-	b1 = Double.parseDouble(request.getParameter("y1"));
-	a2 = Double.parseDouble(request.getParameter("x2"));
-	b2 = Double.parseDouble(request.getParameter("y2"));
-	c1 = Double.parseDouble(request.getParameter("result1"));
-	c2 = Double.parseDouble(request.getParameter("result2"));
+	a1 = Double.parseDouble(request.getParameter("a"));
+	b1 = Double.parseDouble(request.getParameter("b"));
+	c1 = Double.parseDouble(request.getParameter("c"));
 			
-	if(Math.abs(a1-a2) > a1)
-	{
-		temp_a1 = -a2*a1;
-		temp_b1 = -a2*b1;
-		temp_c1 = -a2*c1;
-	}
-	else
-	{
-		temp_a1 = a2*a1;
-		temp_b1 = a2*b1;
-		temp_c1 = a2*c1;
-	}
-	
-	temp_a2 = (-a1)*a2;
-	temp_b2 = (-a1)*b2;
-	temp_c2 = (-a1)*c2;
-	
-	y = (temp_c1 + temp_c2)/(temp_b1 + temp_b2);
-	x = (c1 - (b1 * y))/a1;			
+	if (a1 == 0)
+    {
+        out.print("This in not a quadratic equ, Please enter factors.");
+    }
+	determinate = (b1 * b1) - (4 * a1 * c1);
+	if (determinate >= 0 || a1 != 0 && b1 != 0 && c1 != 0)
+    {
+        x1 = (-b1 + Math.sqrt(determinate)) / 2 / a1;
+        x2 = (-b1 - Math.sqrt(determinate)) / 2 / a1;
+    }			
 }
 %>
 
@@ -64,7 +53,7 @@ if(request.getParameter("submit")!=null)
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <p class="navbar-brand">Linear Equation with two variables</p>
+                    <p class="navbar-brand">Quadratic Equation</p>
                 </div>
             </div>
         </nav>
@@ -75,67 +64,48 @@ if(request.getParameter("submit")!=null)
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Calculate 2 variables</h4>
+                                <h4 class="title">Co-effiecient of equation in terms of a, b, c</h4>
                             </div>
                             <div class="content">
                                 <form method="post">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <input name="x1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("x1") != "")%> <%= request.getParameter("x1") %>">
+                                                <input name="a" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("a") != "")%> <%= request.getParameter("a") %>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                       		<span class="in-value">x<sup>2</sup> +</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <input name="b" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("b") != "")%> <%= request.getParameter("b") %>">
                                             </div>
                                         </div>
                                         <div class="col-md-1">
                                        		<span class="in-value">x +</span>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <input name="y1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("y1") != "")%> <%= request.getParameter("y1") %>">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                       		<span class="in-value">y =</span>
-                                        </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <input name="result1" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("result1") != "")%> <%= request.getParameter("result1") %>">
+                                                <input name="c" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("c") != "")%> <%= request.getParameter("c") %>">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <input name="x2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("x2") != "")%> <%= request.getParameter("x2") %>">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                       		<span class="in-value">x +</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <input name="y2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("y2") != "")%> <%= request.getParameter("y2") %>">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                       		<span class="in-value">y =</span>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input name="result2" type="number" step="any" class="form-control border-input" placeholder="<% if(request.getParameter("result2") != "")%> <%= request.getParameter("result2") %>">
-                                            </div>
-                                        </div>
-                                    </div>
-									
+                                    									
                                     <div class="alert alert-info alert-with-icon" style="padding-left:15px;" data-notify="container">
                                         <span data-notify="message">
 											<!-- Output Result -->
 											<strong style="margin-bottom: 10px; display: block;">Result:</strong>
 											<%
-												out.println("X = " + x);
+												out.println("Determinate = " + determinate);
 											%>
 											<br>
 											<%
-												out.println("Y = " + y);
+												out.println("First value of x = " + x1);
+											%>
+											<br>
+											<%
+												out.println("Second value of x = " + x2);
 											%>
 										</span>
                                     </div>

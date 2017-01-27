@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Linear equation with variables - Math Assignment</title>
+<title>Linear equation with three variables - Math Assignment</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
@@ -53,7 +53,7 @@ if(request.getParameter("submit")!=null)
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <p class="navbar-brand">Linear Equation with two variables</p>
+                    <p class="navbar-brand">Linear Equation with three variables</p>
                 </div>
             </div>
         </nav>
@@ -64,7 +64,7 @@ if(request.getParameter("submit")!=null)
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Calculate 2 variables</h4>
+                                <h4 class="title">Calculate 3 variables</h4>
                             </div>
                             <div class="content">
                                 <form method="post">
