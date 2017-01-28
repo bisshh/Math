@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Area Of Triangle - Math Assignment</title>
+<title>Vector - Math Assignment</title>
 <jsp:include page="lib/include/head-top.jsp" /> <!-- /head top -->
 </head>
 <body>
@@ -21,7 +21,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <p class="navbar-brand">Area Of Triangle</p>
+                    <p class="navbar-brand">Vector</p>
                 </div>
             </div>
         </nav>
@@ -34,19 +34,19 @@
                             <div class="container-fluid">
                             	<div class="row">
                                     <div class="col-sm-4">
-                                        <a href="triangle_all_side_given.jsp">
+                                        <a href="vector_dot_product.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
                                                     <div class="col-xs-3">
                                                         <div class="icon-big icon-warning text-center">
-                                                            <i class="ti-ruler-alt-2"></i>
+                                                            <i class="ti-vector"></i>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-9">
                                                         <div class="numbers">
-                                                            <p>When all sides of the</p>
-                                                            triangle are given.
+                                                            <p>dot product of</p>
+                                                            two vectors
                                                         </div>
                                                     </div>
                                                 </div>
@@ -69,19 +69,19 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="triangle_two_side_angle_given.jsp">
+                                        <a href="vector_addition.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
                                                     <div class="col-xs-3">
                                                         <div class="icon-big icon-warning text-center">
-                                                            <i class="ti-ruler-alt-2"></i>
+                                                            <i class="ti-vector"></i>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-9">
                                                         <div class="numbers">
-                                                            <p>When two sides and the angle between these</p>
-                                                           2 sides are given
+                                                            <p>two vectors in x,y,z coordinates</p>
+                                                           Addition vector
                                                         </div>
                                                     </div>
                                                 </div>
@@ -105,19 +105,88 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="triangle_height_given_rightangle.jsp">
+                                        <a href="vector_substraction.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
                                                     <div class="col-xs-3">
                                                         <div class="icon-big icon-warning text-center">
-                                                            <i class="ti-ruler-alt-2"></i>
+                                                            <i class="ti-vector"></i>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-9">
                                                         <div class="numbers">
-                                                            <p>When the base and height are given assume triangle is a</p>
-                                                            right angled
+                                                            <p>two vectors in x,y,z coordinates</p>
+                                                           Substraction vector
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="footer">
+                                                    <hr>
+                                                    <div class="stats">
+                                                        <div class="row">
+                                                        	<div class="col-xs-4">
+                                                        		<strong>Example:</strong>
+                                                        	</div>
+                                                        	<div class="col-xs-8">
+                                                            	f (x) = ax<sup>2</sup> + bx + c
+                                                            </div>
+                                                    	</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-sm-4">
+                                        <a href="vector_multiplication.jsp">
+                                        <div class="card">
+                                            <div class="content">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <div class="icon-big icon-warning text-center">
+                                                            <i class="ti-vector"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-9">
+                                                        <div class="numbers">
+                                                            <p>two vectors in x,y,z coordinates</p>
+                                                           Multiplication vector
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="footer">
+                                                    <hr>
+                                                    <div class="stats">
+                                                        <div class="row">
+                                                        	<div class="col-xs-4">
+                                                        		<strong>Example:</strong>
+                                                        	</div>
+                                                        	<div class="col-xs-8">
+                                                            	f (x) = ax<sup>2</sup> + bx + c
+                                                            </div>
+                                                    	</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <a href="vector_scalar_multiplication.jsp">
+                                        <div class="card">
+                                            <div class="content">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <div class="icon-big icon-warning text-center">
+                                                            <i class="ti-vector"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-9">
+                                                        <div class="numbers">
+                                                            <p>Coefficient of the vector</p>
+                                                           Scalar Multiplication vector
                                                         </div>
                                                     </div>
                                                 </div>
