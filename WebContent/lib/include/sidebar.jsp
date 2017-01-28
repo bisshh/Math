@@ -20,32 +20,32 @@
                    </a>
                </li>
                <li>
-                   <a href="triangle.jsp">
+                   <a href="area_of_triangle.jsp">
                        <i class="ti-ruler-alt-2"></i>
                        <p>Area of Triangle</p>
                    </a>
                </li>
                <li>
-                   <a href="circle.html">
+                   <a href="area_of_circle.jsp">
                        <i class="ti-power-off"></i>
                        <p>Area of Circle</p>
                    </a>
                </li>
                <li>
-                   <a href="vector.html">
+                   <a href="vector.jsp">
                        <i class="ti-vector"></i>
                        <p>Vector</p>
                    </a>
                </li>
                <li>
-                   <a href="matrix.html">
+                   <a href="matrix.jsp">
                        <i class="ti-layout-grid3"></i>
                        <p>Matrix</p>
                    </a>
                </li>
                
                <li>
-                   <a href="calculus.html">
+                   <a href="calculus.jsp">
                        <i class="ti-light-bulb"></i>
                        <p>Calculus</p>
                    </a>

@@ -1,0 +1,142 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.io.*, java.util.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Area of a triangle when all side are given - Math Assignment</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<meta name="viewport" content="width=device-width" />
+
+<jsp:include page="lib/include/head-top.jsp" /> <!-- /head top -->
+
+</head>
+<body>
+<%
+//variable declaration
+double radius, area, circumference;
+area = 0;
+circumference = 0;
+
+if(request.getParameter("submit")!=null)
+{
+	radius = Double.parseDouble(request.getParameter("radius"));
+	circumference = 2 * Math.PI * radius;
+	area = Math.PI * radius * radius; 
+}
+%>
+
+<div class="wrapper">
+	<jsp:include page="lib/include/sidebar.jsp" /> <!-- /Sidebar -->
+
+    <div class="main-panel">
+		<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <p class="navbar-brand">Program to calculate Area of Circle</p>
+                </div>
+            </div>
+        </nav>
+				
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Calculate the area of circle</h4>
+                            </div>
+                            <div class="content">
+                                <form class="form-horizontal" method="post">
+									<label for="radius">Enter the radius of circle</label>
+				                    <div class="input-group">
+				                      <input type="text" class="form-control border-input" name="radius" id="radius" placeholder="<% if(request.getParameter("radius") != "")%> <%= request.getParameter("radius") %>">
+				                      <span class="input-group-btn">
+				                        <input class="btn btn-danger btn-fill btn-wd" type="submit" name="submit" value="Calculate">
+				                      </span>
+				                    </div><!-- /input-group -->	
+									<div class="alert alert-info alert-with-icon" style="padding-left:15px;" data-notify="container">
+                                        <span data-notify="message">
+											<!-- Output Result -->
+											<strong style="margin-bottom: 10px; display: block;">Result:</strong>
+											<%
+												out.println("Area of Circle is = " + area);
+											%>
+										</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="assets/img/2var.gif" alt="..."/>
+                            </div>
+                            <div class="content">
+                                <p class="description text-center">
+                                    Learn about a class of equations in two variables that's called "linear equations." They are called that way because their graph is a line. These are the most basic and probably most useful equations you will ever know!
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h5>12<br /><small>Files</small></h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>2GB<br /><small>Used</small></h5>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>24,6$<br /><small>Spent</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Choose the linear</h4>
+                            </div>
+                            <div class="content">
+                               	<ul class="list-unstyled team-members">
+                                    <li class="col-xs-12">
+                                        <a href="two_variable.html">Two variables
+                                        <br />
+                                        <span class="text-muted"><small>Linear equation in two variables.</small></span></a>
+                                    </li>
+                                    <li class="col-xs-12">
+                                        <a href="#">Three variables
+                                        <br />
+                                        <span class="text-muted"><small>Linear equation in three variables.</small></span></a>
+                                    </li>
+                                    <li class="col-xs-12">
+                                        <a href="#">Quadratic
+                                        <br />
+                                        <span class="text-muted"><small>Quadratic equations involving real roots</small></span></a>
+                                    </li>
+                                    <div class="clearfix"></div>
+                            	</ul>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <jsp:include page="lib/include/footer.jsp" /> <!-- include -->
+    </div>
+</div>
+
+
+</body>
+
+<jsp:include page="lib/include/js.jsp" /> <!-- java script -->
+</html>

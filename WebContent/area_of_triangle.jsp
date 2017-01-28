@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Linear Equation - Math Assignment</title>
+<title>Area Of Triangle - Math Assignment</title>
 <jsp:include page="lib/include/head-top.jsp" /> <!-- /head top -->
 </head>
 <body>
@@ -21,7 +21,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <p class="navbar-brand">Linear Equation</p>
+                    <p class="navbar-brand">Area Of Triangle</p>
                 </div>
             </div>
         </nav>
@@ -34,19 +34,19 @@
                             <div class="container-fluid">
                             	<div class="row">
                                     <div class="col-sm-4">
-                                        <a href="lin_two_variable.jsp">
+                                        <a href="triangle_all_side_given.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
                                                     <div class="col-xs-3">
                                                         <div class="icon-big icon-warning text-center">
-                                                            <i class="ti-stats-up"></i>
+                                                            <i class="ti-ruler-alt-2"></i>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-9">
                                                         <div class="numbers">
-                                                            <p>Linear Equation with</p>
-                                                            2 variables
+                                                            <p>When all sides of the</p>
+                                                            triangle are given.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -69,19 +69,19 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="lin_three_variable.jsp">
+                                        <a href="triangle_two_side_angle_given.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
                                                     <div class="col-xs-3">
                                                         <div class="icon-big icon-warning text-center">
-                                                            <i class="ti-stats-up"></i>
+                                                            <i class="ti-ruler-alt-2"></i>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-9">
                                                         <div class="numbers">
-                                                            <p>Linear Equation with</p>
-                                                           3 variables
+                                                            <p>When two sides and the angle between these</p>
+                                                           2 sides are given
                                                         </div>
                                                     </div>
                                                 </div>
@@ -105,19 +105,19 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="quadratic_equ.jsp">
+                                        <a href="triangle_height_given_rightangle.jsp">
                                         <div class="card">
                                             <div class="content">
                                                 <div class="row">
                                                     <div class="col-xs-3">
                                                         <div class="icon-big icon-warning text-center">
-                                                            <i class="ti-stats-up"></i>
+                                                            <i class="ti-ruler-alt-2"></i>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-9">
                                                         <div class="numbers">
-                                                            <p>Quadratic equations</p>
-                                                            real roots
+                                                            <p>When the base and height are given assume triangle is a</p>
+                                                            right angled
                                                         </div>
                                                     </div>
                                                 </div>
