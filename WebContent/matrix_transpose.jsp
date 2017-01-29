@@ -13,7 +13,56 @@
 
 </head>
 <body>
+<script>
+    function createMatrix() {
+        var row = document.getElementById('row').value;
+        var col = document.getElementById('col').value;
+        var i , j;
+        if (row == '') {
+            alert('Please Enter Number Of Rows!');
+            return false;
+        }
+        if (col == '') {
+            alert('Please Enter Number Of Columns !');
+            return false;
+        }
 
+        var amatrix = new Array();
+
+        var htmlA = 'Enter the A matrix :';
+        htmlA += '<table>';
+
+        for (i = 0; i < row; i++) {
+            amatrix[i] = new Array();
+
+            htmlA += '<tr>';
+            for (j = 0; j < col; j++) {
+                htmlA += '<td>';
+                htmlA += '<input type="text" name="amatrix[' + i + '][' + j + ']">';
+                htmlA += '</td>';
+            }
+            htmlA += '</tr>';
+        }
+        htmlA += '</table>';
+        document.getElementById('matrixA').innerHTML = htmlA;
+        var transpose= new Array();
+
+     
+}
+
+    function checkMatrix() {
+        var row = document.getElementById('row').value;
+        var col = document.getElementById('col').value;
+
+        if (row == '' || col == '') {
+            alert('Please Create Matrix First!');
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
 
 <div class="wrapper">
 	<jsp:include page="lib/include/sidebar.jsp" /> <!-- /Sidebar -->
@@ -42,7 +91,7 @@
                                 <h4 class="title">Check if given two matrices are identical</h4>
                             </div>
                             <div class="content">
-                                <form class="form-horizontal" method="post" onsubmit="return checkMatrix()">
+                                <form class="form-horizontal" name="form1" method="post" onsubmit="return checkMatrix()">
 									<div class="form-group">
 									    <label class="control-label col-sm-3" for="row">Number of Rows:</label>
 									    <div class="col-sm-3">
@@ -63,97 +112,38 @@
 									<input type="submit" name="submit" value="submit" class="btn btn-warning btn-fill btn-wd" >
 									<div id="matrixR">                
 						            </div>
-						            <hr>
-						            <script>
-									  function createMatrix() {
-									      var row = document.getElementById('row').value;
-									      var col = document.getElementById('col').value;
-									      var i, j, c, d;
-									      var flag = 1;
-									      if (row == '') {
-									          alert('Please Enter Number Of Rows!');
-									          return false;
-									      }
-									      if (col == '') {
-									          alert('Please Enter Number Of Columns !');
-									          return false;
-									      }
-									      if(row!=col){
-									          alert('Matrix cannot be evaluated');
-									          return false;
-									      }
-									      else{
-									          var addM = new Array();
-									
-									          var htmlA = 'Enter the element of matrix :';
-									          htmlA += '<div>';
-									
-									          for (c = 0; c < row; c++) {
-									              addM[c] = new Array();
-									
-									              htmlA += '<div class="form-group">';
-									              for (d = 0; d < col; d++) {
-									                  htmlA += '<div class="col-sm-3">';
-									                  htmlA += '<input name="addM[' + row + '][' + col + ']" type="number" step="any" class="form-control border-input">';
-									                  htmlA += '</div>';
-									              }
-									              htmlA += '</div>';
-									          }
-									          htmlA += '</div>';
-									          document.getElementById('matrixA').innerHTML = htmlA;
-									             
-									      }
-									
-									      
-									      function checkMatrix() {
-									          var row = document.getElementById('row').value;
-									          var col = document.getElementById('col').value;
-									
-									          if (row == '' || col == '') {
-									              alert('Please Create Matrix First!');
-									              return false;
-									          }
-									          else {
-									              return true;
-									          }
-									      }                    
-									  }
-									</script>
-									<%
-									//variable declaration
-									String result;
-									int row, col, flag;
-									result = "";
-									flag = 0;
-									
-									if(request.getParameter("submit") != null)
-									{
-										int addM[][] = new int[2][2];
-										row = Integer.valueOf(request.getParameter("row"));
-										col = Integer.valueOf(request.getParameter("col"));
-										
-									    for(int c = 0; c < row; c++){
-									        for(int d = 0; d < col; d++){
-									            if((c == d && addM[c][d] != 1) || (c != d && addM[c][d] != 0)){
-									                flag = 0;
-									                break;
-									             }
-									        }
-									    }
-									    if(flag == 1){
-									    	result = "Matrix is an identity matrix";
-									    }
-									    else{
-									    	result = "Not an identity matrix";
-									    }
-									}
-									%>
+						            
+									<hr>
 									<div class="alert alert-info alert-with-icon" style="padding-left:15px;" data-notify="container">
                                         <span data-notify="message">
 											<!-- Output Result -->
 											<strong style="margin-bottom: 10px; display: block;">Result:</strong>
 											<%
-												out.println(result);
+											//variable declaration
+											String result;
+											int amatrix, row, col, flag;
+											result = "";
+											
+											if(request.getParameter("submit") != null)
+											{
+												row = Integer.valueOf(request.getParameter("row"));
+												col = Integer.valueOf(request.getParameter("col"));
+												int addM[][] = new int[2][2];
+												int transpose[][] = new int[2][2];
+												out.print("The resultant matrix is :");
+											    for (int c = 0 ; c < row ; c++) {
+												   for (int d = 0 ; d < col ; d++) {
+												      transpose[d][c] = addM[c][d];
+												   }
+												}
+											    
+											    for (int c = 0 ; c < col; c++) {
+											        for (int d = 0 ; d < row ; d++) {
+											            out.print(transpose[c][d] + " ");
+											        }
+											        out.println();
+											    }
+											}
 											%>
 										</span>
                                     </div>
