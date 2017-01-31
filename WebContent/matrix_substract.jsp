@@ -19,26 +19,26 @@
         var col = document.getElementById('col').value;
         var i , j , m , n;
         if (row == '') {
-            alert('Please Enter Number Of Rows!');
+            alert('Please enter the number of Rows!');
             return false;
         }
         if (col == '') {
-            alert('Please Enter Number Of Columns !');
+            alert('Please enter number of Columns');
             return false;
         }
 
-        var amatrix = new Array();
+        var Amatrix = new Array();
 
         var htmlA = 'Enter the A matrix :';
-        htmlA += '<table>';
+        htmlA += '<div>';
 
         for (i = 0; i < row; i++) {
-            amatrix[i] = new Array();
+        	Amatrix[i] = new Array();
 
             htmlA += '<tr>';
             for (j = 0; j < col; j++) {
                 htmlA += '<td>';
-                htmlA += '<input type="text" name="amatrix[' + i + '][' + j + ']">';
+                htmlA += '<input type="text" name="matrixA[' + i + '][' + j + ']">';
                 htmlA += '</td>';
             }
             htmlA += '</tr>';
@@ -46,15 +46,15 @@
         htmlA += '</table>';
         document.getElementById('matrixA').innerHTML = htmlA;
 
-        var bmatrix = new Array();
+        var Bmatrix = new Array();
         var htmlB = 'Enter the B matrix :';
         htmlB += '<table>';
         for (i = 0; i < row; i++) {
-            bmatrix[i] = new Array();
+        	Bmatrix[i] = new Array();
             htmlB += '<tr>';
             for (j = 0; j < col; j++) {
                 htmlB += '<td>';
-                htmlB += '<input type="text" name="bmatrix[' + i + '][' + j + ']">';
+                htmlB += '<input type="text" name="matrixB[' + i + '][' + j + ']">';
                 htmlB += '</td>';
             }
             htmlB += '</tr>';
@@ -121,11 +121,10 @@
                                     <div class="clearfix"></div>
 									<hr>
 									<div id="matrixA"></div>
-            
+            						<div id="matrixB"></div>
+            						
 									<input type="submit" name="submit" value="submit" class="btn btn-warning btn-fill btn-wd" >
-									<div id="matrixR">                
-						            </div>
-						            
+									
 									<hr>
 									<div class="alert alert-info alert-with-icon" style="padding-left:15px;" data-notify="container">
                                         <span data-notify="message">
@@ -133,24 +132,22 @@
 											<strong style="margin-bottom: 10px; display: block;">Result:</strong>
 											<%
 											//variable declaration
-											String result;
-											int amatrix, row, col;
-											result = "";
+											int row, col;
 											
 											if(request.getParameter("submit") != null)
 											{
 												row = Integer.valueOf(request.getParameter("row"));
 												col = Integer.valueOf(request.getParameter("col"));
-												int matrixA[][] = new int[2][2];
-												int matrixB[][] = new int[2][2];
+												int Amatrix [][] = Integer.valueOf(request.getParameter("matrixA[' + i + '][' + j + ']"));
+												int Bmatrix [][] = Integer.valueOf(request.getParameter("matrixB[' + i + '][' + j + ']"));
 												int matrixC[][] = new int[2][2];
-												
-									            for (int m = 0; m < row; m++) {
-									                for (int n = 0; n < col; n++) {
-									                    matrixC[m][n] = matrixA[m][n] - matrixB[m][n];
-									                    out.print(Arrays.asList(matrixC[m][n]));
-									                    //print_r(matrixC[m][n]);
-									                }
+												int i, j;												
+									            for (int m = 0; m < matrixC.length; m++) {
+									                for (int n = 0; n < matrixC.length; n++) {
+									                    matrixC[m][n] = Amatrix[i][j] - Bmatrix[i][j];
+									                	out.print(matrixC[m][n] + " ");		
+									    			}
+									    			out.println();
 									            }
 											}
 											%>
